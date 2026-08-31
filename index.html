@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>علی موسی‌زاده | کارشناس تولید</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+<style>
+  :root{
+    --bg: #14161c;
+    --bg-alt: #1c1f27;
+    --card: #ffffff;
+    --text-light: #f3f4f6;
+    --text-muted: #9aa1ac;
+    --accent: #4f7cff;
+    --accent-2: #7c3aed;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg);
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+  header {
+    padding: 18px 24px;
+    background: #0f1117;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #262a35;
+  }
+  header .name { font-weight: 700; font-size: 1.1rem; }
+
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at 30% 20%, #1b2030 0%, #14161c 60%);
+  }
+  .avatar {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 28px;
+    box-shadow: 0 0 40px rgba(79,124,255,0.25);
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .hero p.subtitle {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    margin-bottom: 26px;
+  }
+  .socials { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .socials a {
+    color: var(--text-light);
+    text-decoration: none;
+    background: #232732;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+  .socials a:hover { background: var(--accent); }
+
+  section { padding: 70px 20px; max-width: 900px; margin: 0 auto; }
+  section h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .about-box {
+    background: var(--card);
+    color: #222;
+    border-radius: 16px;
+    padding: 36px;
+    font-size: 1.05rem;
+  }
+  .about-box strong { color: #111; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-right: 30px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(var(--accent), var(--accent-2));
+  }
+  .t-item { position: relative; margin-bottom: 30px; }
+  .t-dot {
+    position: absolute;
+    right: -1px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .t-card {
+    background: var(--bg-alt);
+    margin-right: 30px;
+    padding: 22px 24px;
+    border-radius: 14px;
+    border: 1px solid #2a2e3a;
+  }
+  .t-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .t-card .place { color: var(--accent); font-size: 0.95rem; margin-bottom: 8px; }
+  .t-card .date { color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; display: block; }
+  .t-card p { color: #cfd3da; font-size: 0.95rem; }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+  }
+  .skill-name { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.95rem; }
+  .skill-bar-bg { background: #262a35; border-radius: 8px; height: 8px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 8px; }
+
+  /* Projects */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+  .project-card {
+    background: var(--bg-alt);
+    border-radius: 16px;
+    padding: 26px;
+    border: 1px solid #2a2e3a;
+  }
+  .project-card h3 { margin-bottom: 10px; color: var(--accent); }
+  .project-card p { color: #cfd3da; font-size: 0.95rem; }
+  .project-card .date { color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; display: block; }
+
+  /* Education */
+  .edu-card {
+    background: var(--bg-alt);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    border: 1px solid #2a2e3a;
+  }
+  .edu-card h3 { font-size: 1.1rem; }
+  .edu-card .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; }
+
+  footer {
+    background: #0f1117;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid #262a35;
+  }
+  footer h2 { margin-bottom: 24px; }
+  .contact-list { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .contact-list a { color: var(--accent); text-decoration: none; }
+  footer .copyright { margin-top: 30px; color: var(--text-muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="name">علی موسی‌زاده</span>
+</header>
+
+<section class="hero">
+  <img class="avatar" src="profile.jpg" alt="علی موسی‌زاده">
+  <h1>علی موسی‌زاده</h1>
+  <p class="subtitle">کارشناس تولید | دانشجوی کارشناسی ارشد مهندسی مکانیک</p>
+  <div class="socials">
+    <a href="mailto:alimosazadeh2000@gmail.com">ایمیل</a>
+    <a href="tel:09105151520">تماس تلفنی</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>درباره من</h2>
+  <div class="about-box">
+    <p>سلام! من <strong>علی موسی‌زاده</strong> هستم، فارغ‌التحصیل مهندسی شیمی از دانشگاه تهران و در حال حاضر دانشجوی کارشناسی ارشد مهندسی مکانیک (گرایش تبدیل انرژی) در همین دانشگاه. در طول مسیر کاری‌ام تجربه‌ی متنوعی در حوزه‌ی تولید دارویی، کنترل کیفیت، مدیریت سالن و تدریس شیمی به‌دست آورده‌ام. به کار تیمی، دقت در جزئیات و یادگیری مداوم علاقه‌مندم.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>سوابق کاری</h2>
+  <div class="timeline">
+
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <h3>دبیر شیمی</h3>
+        <span class="place">آموزشگاه غیرانتفاعی علمی برنا</span>
+        <p>برگزاری کلاس‌های خصوصی و گروهی برای آمادگی امتحان نهایی و کنکور، به‌عنوان دبیر شیمی.</p>
+        <span class="date">۱۴۰۵/۰۲ - اکنون</span>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <h3>اپراتور تولید و بسته‌بندی</h3>
+        <span class="place">شرکت دارویی فومن وش</span>
+        <p>اجرای کامل عملیات دستگاه پد الکلی، بسته‌بندی محصولات دارویی با رعایت استانداردهای GMP، GLP، GSP، کنترل کیفیت نهایی (QC) و عملیات تاییدیه (OC).</p>
+        <span class="date">۱۴۰۴/۰۲ - ۱۴۰۵/۰۲</span>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <h3>مدیر سالن</h3>
+        <span class="place">رستوران ماهی سفید</span>
+        <p>هماهنگی سرویس‌دهی سالن، کنترل کیفیت خدمات، مدیریت میزها و چیدمان، نظارت بر رضایت مشتری و کار با نرم‌افزار سفارش‌گیری رستورانی اسپیدز.</p>
+        <span class="date">۱۴۰۳/۰۱ - ۱۴۰۴/۰۲</span>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <h3>کنترل کیفیت</h3>
+        <span class="place">اگزوز سازی امید گیلان</span>
+        <p>مسئولیت کنترل کیفیت در واحد QC و کار با ابزارهای اندازه‌گیری دقیق (کار دانشجویی).</p>
+        <span class="date">۱۴۰۲/۰۶ - ۱۴۰۳/۰۱</span>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <h3>دانشجو کارآموز</h3>
+        <span class="place">روغن نباتی نرگس شیراز</span>
+        <p>کارآموزی در دفتر مرکزی شرکت، تهیه گزارش کامل از روند تولید، انبارداری و تاریخچه شرکت.</p>
+        <span class="date">۱۴۰۲/۰۴ - ۱۴۰۲/۰۶</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2>مهارت‌ها</h2>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-name"><span>توانایی کار در شرایط فشار</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>مدیریت زمان</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>انعطاف‌پذیری</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>کار تیمی</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>کنترل کیفیت</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>اصول GMP</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>پیگیری و نظارت</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>توجه به جزئیات</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div>
+      <div class="skill-name"><span>Microsoft Word / Excel</span></div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>پروژه‌ها</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>تصفیه روغن موتور شرکت بهران</h3>
+      <p>پروژه دانشجویی در زمینه تصفیه روغن موتور مستعمل و استفاده‌شده شرکت روغن بهران.</p>
+      <span class="date">۱۴۰۲/۰۸ - ۱۴۰۲/۱۱</span>
+    </div>
+    <div class="project-card">
+      <h3>یادگیری دستگاه‌های CNC</h3>
+      <p>دوره تخصصی نگهداری و کار با دستگاه‌های CNC، گذرانده‌شده در مرکز آکادمی ایرانیان. دارای گواهینامه بین‌المللی CNC Machine Maintenance.</p>
+      <span class="date">۱۴۰۱/۰۴</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>تحصیلات</h2>
+  <div class="edu-card">
+    <h3>کارشناسی ارشد مهندسی مکانیک - گرایش تبدیل انرژی</h3>
+    <div class="meta">دانشگاه تهران | معدل ۱۵ | ۱۴۰۳/۰۷ - اکنون</div>
+  </div>
+  <div class="edu-card">
+    <h3>کارشناسی مهندسی شیمی</h3>
+    <div class="meta">دانشگاه تهران | معدل ۱۴ | ۱۳۹۸/۰۷ - ۱۴۰۳/۰۴</div>
+  </div>
+</section>
+
+<footer>
+  <h2>تماس با من</h2>
+  <div class="contact-list">
+    <a href="mailto:alimosazadeh2000@gmail.com">ایمیل: alimosazadeh2000@gmail.com</a>
+    <a href="tel:09105151520">تلفن: ۰۹۱۰۵۱۵۱۵۲۰</a>
+    <span style="color:#9aa1ac">استان گیلان، بندرانزلی</span>
+  </div>
+  <div class="copyright">© تمامی حقوق برای علی موسی‌زاده محفوظ است.</div>
+</footer>
+
+</body>
+</html>
