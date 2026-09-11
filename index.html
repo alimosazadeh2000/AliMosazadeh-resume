@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>علی موسی‌زاده | کارشناس تولید</title>
+<title>علی موسی‌زاده | متخصص هوش مصنوعی و کارشناس تولید</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
 <style>
   :root{
@@ -14,6 +14,7 @@
     --text-muted: #9aa1ac;
     --accent: #4f7cff;
     --accent-2: #7c3aed;
+    --gold: #ffb800;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -55,118 +56,105 @@
     margin-bottom: 28px;
     box-shadow: 0 0 40px rgba(79,124,255,0.25);
   }
-  .hero h1 {
-    font-size: 2.6rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .hero p.subtitle {
-    color: var(--text-muted);
-    font-size: 1.25rem;
-    margin-bottom: 26px;
-  }
+  .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 10px; }
+  .hero p.subtitle { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 26px; max-width: 640px; }
   .socials { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
   .socials a {
-    color: var(--text-light);
-    text-decoration: none;
-    background: #232732;
-    padding: 10px 18px;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    transition: 0.2s;
+    color: var(--text-light); text-decoration: none; background: #232732;
+    padding: 10px 18px; border-radius: 10px; font-size: 0.95rem; transition: 0.2s;
   }
   .socials a:hover { background: var(--accent); }
 
   section { padding: 70px 20px; max-width: 900px; margin: 0 auto; }
-  section h2 {
-    text-align: center;
-    font-size: 1.9rem;
-    margin-bottom: 40px;
-    font-weight: 700;
-  }
+  section h2 { text-align: center; font-size: 1.9rem; margin-bottom: 40px; font-weight: 700; }
 
   .about-box {
-    background: var(--card);
-    color: #222;
-    border-radius: 16px;
-    padding: 36px;
-    font-size: 1.05rem;
+    background: var(--card); color: #222; border-radius: 16px; padding: 36px; font-size: 1.05rem;
   }
   .about-box strong { color: #111; }
+
+  .ai-highlight {
+    margin-top: 26px;
+    background: linear-gradient(160deg, #eef1ff, #f7f4ff);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+  }
+  .ai-highlight .badge {
+    position: absolute; top: -14px; right: 24px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff; font-size: 0.8rem; font-weight: 700;
+    padding: 5px 16px; border-radius: 999px;
+  }
+  .ai-highlight h3 { color: #222; font-size: 1.25rem; margin-bottom: 16px; font-weight: 800; }
+  .ai-list { list-style: none; padding: 0; }
+  .ai-list li {
+    color: #2a2d35; font-size: 0.98rem; font-weight: 600;
+    padding: 8px 0 8px 0; border-bottom: 1px dashed #d3d8f0;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .ai-list li:last-child { border-bottom: none; }
+  .ai-list li::before { content: '✓'; color: var(--accent-2); font-weight: 800; flex-shrink: 0; }
 
   /* Timeline */
   .timeline { position: relative; padding-right: 30px; }
   .timeline::before {
-    content: '';
-    position: absolute;
-    right: 8px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
+    content: ''; position: absolute; right: 8px; top: 0; bottom: 0; width: 3px;
     background: linear-gradient(var(--accent), var(--accent-2));
   }
   .t-item { position: relative; margin-bottom: 30px; }
   .t-dot {
-    position: absolute;
-    right: -1px;
-    top: 6px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid var(--bg);
+    position: absolute; right: -1px; top: 6px; width: 18px; height: 18px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg);
   }
+  .t-dot.featured { background: var(--gold); width: 22px; height: 22px; right: -3px; }
+  .t-dot.logo-dot {
+    width: 34px; height: 34px; right: -9px; background: #fff; border: 3px solid var(--bg);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .t-dot.logo-dot img { width: 100%; height: 100%; object-fit: contain; padding: 2px; }
   .t-card {
-    background: var(--bg-alt);
-    margin-right: 30px;
-    padding: 22px 24px;
-    border-radius: 14px;
+    background: var(--bg-alt); margin-right: 30px; padding: 22px 24px; border-radius: 14px;
     border: 1px solid #2a2e3a;
   }
+  .t-card.featured-card {
+    border: 2px solid var(--gold);
+    background: linear-gradient(160deg, #23231a, #1c1f27);
+    box-shadow: 0 0 30px rgba(255,184,0,0.08);
+  }
+  .key-badge {
+    display: inline-block; background: linear-gradient(90deg, var(--gold), #ff8a00);
+    color: #1a0e05; font-size: 0.75rem; font-weight: 800; padding: 4px 12px;
+    border-radius: 999px; margin-bottom: 10px;
+  }
   .t-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
-  .t-card .place { color: var(--accent); font-size: 0.95rem; margin-bottom: 8px; }
+  .t-card .place { color: var(--accent); font-size: 0.95rem; margin-bottom: 8px; display: block; }
   .t-card .date { color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; display: block; }
   .t-card p { color: #cfd3da; font-size: 0.95rem; }
+  .t-card .mini-list { list-style: none; padding: 0; margin-top: 10px; }
+  .t-card .mini-list li { color: #cfd3da; font-size: 0.92rem; padding: 4px 0; padding-right: 18px; position: relative; }
+  .t-card .mini-list li::before { content: '—'; position: absolute; right: 0; color: var(--accent); }
 
   /* Skills */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
   .skill-name { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.95rem; }
   .skill-bar-bg { background: #262a35; border-radius: 8px; height: 8px; overflow: hidden; }
   .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 8px; }
 
   /* Projects */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
-  .project-card {
-    background: var(--bg-alt);
-    border-radius: 16px;
-    padding: 26px;
-    border: 1px solid #2a2e3a;
-  }
+  .project-card { background: var(--bg-alt); border-radius: 16px; padding: 26px; border: 1px solid #2a2e3a; }
   .project-card h3 { margin-bottom: 10px; color: var(--accent); }
   .project-card p { color: #cfd3da; font-size: 0.95rem; }
   .project-card .date { color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; display: block; }
 
   /* Education */
-  .edu-card {
-    background: var(--bg-alt);
-    border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 18px;
-    border: 1px solid #2a2e3a;
-  }
+  .edu-card { background: var(--bg-alt); border-radius: 14px; padding: 22px 24px; margin-bottom: 18px; border: 1px solid #2a2e3a; }
   .edu-card h3 { font-size: 1.1rem; }
   .edu-card .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; }
 
-  footer {
-    background: #0f1117;
-    padding: 50px 20px;
-    text-align: center;
-    border-top: 1px solid #262a35;
-  }
+  footer { background: #0f1117; padding: 50px 20px; text-align: center; border-top: 1px solid #262a35; }
   footer h2 { margin-bottom: 24px; }
   .contact-list { display: flex; flex-direction: column; gap: 10px; align-items: center; }
   .contact-list a { color: var(--accent); text-decoration: none; }
@@ -182,7 +170,7 @@
 <section class="hero">
   <img class="avatar" src="profile.jpg" alt="علی موسی‌زاده">
   <h1>علی موسی‌زاده</h1>
-  <p class="subtitle">کارشناس تولید | دانشجوی کارشناسی ارشد مهندسی مکانیک</p>
+  <p class="subtitle">کارشناس تولید | متخصص هوش مصنوعی، اتوماسیون و توسعه راهکارهای AI</p>
   <div class="socials">
     <a href="mailto:alimosazadeh2000@gmail.com">ایمیل</a>
     <a href="tel:09105151520">تماس تلفنی</a>
@@ -192,7 +180,31 @@
 <section id="about">
   <h2>درباره من</h2>
   <div class="about-box">
-    <p>سلام! من <strong>علی موسی‌زاده</strong> هستم، فارغ‌التحصیل مهندسی شیمی از دانشگاه تهران و در حال حاضر دانشجوی کارشناسی ارشد مهندسی مکانیک (گرایش تبدیل انرژی) در همین دانشگاه. در طول مسیر کاری‌ام تجربه‌ی متنوعی در حوزه‌ی تولید دارویی، کنترل کیفیت، مدیریت سالن و تدریس شیمی به‌دست آورده‌ام. به کار تیمی، دقت در جزئیات و یادگیری مداوم علاقه‌مندم.</p>
+    <p>سلام! من <strong>علی موسی‌زاده</strong> هستم، فارغ‌التحصیل مهندسی شیمی از دانشگاه تهران و در حال حاضر دانشجوی کارشناسی ارشد مهندسی مکانیک (گرایش تبدیل انرژی) در همین دانشگاه. در کنار پیشینه‌ی کاری‌ام در حوزه‌ی تولید و کنترل کیفیت دارویی، طی مدت اخیر با علاقه و پشتکار زیاد وارد حوزه‌ی <strong>هوش مصنوعی، اتوماسیون فرآیندها و توسعه‌ی راهکارهای AI</strong> شده‌ام و به‌صورت عملی روی طراحی و پیاده‌سازی دستیارها و Agentهای هوشمند، اتوماسیون Workflow با ابزارهایی مثل n8n، و توسعه‌ی وب‌سایت و اپلیکیشن با کمک ابزارهای هوش مصنوعی مثل Claude Code کار کرده‌ام. هدفم ادامه‌ی مسیر حرفه‌ای در همین حوزه و کمک به کسب‌وکارها برای پیاده‌سازی راهکارهای هوشمند و اتوماسیون است.</p>
+
+    <div class="ai-highlight">
+      <span class="badge">تخصص کلیدی</span>
+      <h3>🤖 مهارت‌های تخصصی هوش مصنوعی و اتوماسیون</h3>
+      <ul class="ai-list">
+        <li>کار با مدل‌های هوش مصنوعی و LLMها و آشنایی با مفاهیم پایه Machine Learning، Deep Learning و Generative AI</li>
+        <li>مهندسی پرامپت (Prompt Engineering) و طراحی پرامپت‌های ساختاریافته و حرفه‌ای</li>
+        <li>طراحی و پیاده‌سازی Workflowهای اتوماسیون با n8n</li>
+        <li>ساخت Chatbot، AI Agent و دستیارهای هوشمند و اتصال آن‌ها به سرویس‌ها و پایگاه‌های داده</li>
+        <li>کار با APIها، Webhookها و اتصال سرویس‌ها و نرم‌افزارهای مختلف به یکدیگر</li>
+        <li>پیاده‌سازی سیستم‌های RAG (Retrieval-Augmented Generation) برای استفاده از دانش و داده‌های اختصاصی</li>
+        <li>آشنایی با معماری Agentهای هوشمند و منطق تصمیم‌گیری آن‌ها در Workflowها</li>
+        <li>کار با مدل‌های مختلف هوش مصنوعی از جمله ChatGPT، Gemini، Grok و DeepSeek</li>
+        <li>آشنایی با اجرای مدل‌های متن‌باز به‌صورت Local و Offline با Ollama</li>
+        <li>استفاده از روش‌های Vibe Coding / AI-Assisted Coding و کار با Claude Code</li>
+        <li>طراحی و پیاده‌سازی وب‌سایت و Web Application با کمک ابزارهای هوش مصنوعی</li>
+        <li>برنامه‌نویسی با Python و استفاده از آن در پروژه‌های مرتبط با اتوماسیون و هوش مصنوعی</li>
+        <li>طراحی راهکارهای AI برای کسب‌وکار، تحلیل نیازمندی‌ها و شناسایی فرصت‌های اتوماسیون</li>
+        <li>آشنایی با فرآیند مشاوره‌ی هوش مصنوعی، تحلیل Case Studyهای صنعتی و تدوین استراتژی تحول AI</li>
+        <li>آشنایی با تجاری‌سازی Workflowها و تبدیل راهکارهای اتوماسیون به محصولات SaaS</li>
+        <li>آشنایی با اصول امنیت، حریم خصوصی و ملاحظات GDPR در پروژه‌های هوش مصنوعی</li>
+        <li>آشنایی با ارزیابی و مقایسه‌ی مدل‌های زبانی و بررسی محدودیت‌ها، ریسک‌ها و کاربردهای آن‌ها</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -201,12 +213,20 @@
   <div class="timeline">
 
     <div class="t-item">
-      <div class="t-dot"></div>
-      <div class="t-card">
-        <h3>دبیر شیمی</h3>
-        <span class="place">آموزشگاه غیرانتفاعی علمی برنا</span>
-        <p>برگزاری کلاس‌های خصوصی و گروهی برای آمادگی امتحان نهایی و کنکور، به‌عنوان دبیر شیمی.</p>
-        <span class="date">۱۴۰۵/۰۲ - اکنون</span>
+      <div class="t-dot featured"></div>
+      <div class="t-card featured-card">
+        <span class="key-badge">⭐ تخصص کلیدی</span>
+        <h3>متخصص هوش مصنوعی، اتوماسیون و توسعه راهکارهای AI</h3>
+        <span class="place">فعالیت مستقل (Khodkarai)</span>
+        <p>آشنایی و تجربه‌ی عملی در طراحی و پیاده‌سازی راهکارهای مبتنی بر هوش مصنوعی، اتوماسیون فرآیندهای کسب‌وکار و ساخت دستیارها و Agentهای هوشمند. دانش کاربردی در زمینه مدل‌های زبانی بزرگ (LLM)، مهندسی پرامپت، طراحی Workflow و اتصال سرویس‌ها از طریق API.</p>
+        <ul class="mini-list">
+          <li>طراحی و پیاده‌سازی Workflowهای اتوماسیون با n8n</li>
+          <li>ساخت Chatbot، AI Agent و دستیار هوشمند متصل به API و پایگاه داده</li>
+          <li>پیاده‌سازی RAG برای استفاده از داده‌های اختصاصی</li>
+          <li>توسعه وب‌سایت و اپلیکیشن با کمک Claude Code و ابزارهای AI-Assisted Coding</li>
+          <li>مشاوره هوش مصنوعی و طراحی راهکار برای کسب‌وکارها</li>
+        </ul>
+        <span class="date">۱۴۰۵/۰۱ - اکنون</span>
       </div>
     </div>
 
@@ -223,30 +243,10 @@
     <div class="t-item">
       <div class="t-dot"></div>
       <div class="t-card">
-        <h3>مدیر سالن</h3>
-        <span class="place">رستوران ماهی سفید</span>
-        <p>هماهنگی سرویس‌دهی سالن، کنترل کیفیت خدمات، مدیریت میزها و چیدمان، نظارت بر رضایت مشتری و کار با نرم‌افزار سفارش‌گیری رستورانی اسپیدز.</p>
-        <span class="date">۱۴۰۳/۰۱ - ۱۴۰۴/۰۲</span>
-      </div>
-    </div>
-
-    <div class="t-item">
-      <div class="t-dot"></div>
-      <div class="t-card">
-        <h3>کنترل کیفیت</h3>
-        <span class="place">اگزوز سازی امید گیلان</span>
-        <p>مسئولیت کنترل کیفیت در واحد QC و کار با ابزارهای اندازه‌گیری دقیق (کار دانشجویی).</p>
-        <span class="date">۱۴۰۲/۰۶ - ۱۴۰۳/۰۱</span>
-      </div>
-    </div>
-
-    <div class="t-item">
-      <div class="t-dot"></div>
-      <div class="t-card">
-        <h3>دانشجو کارآموز</h3>
-        <span class="place">روغن نباتی نرگس شیراز</span>
-        <p>کارآموزی در دفتر مرکزی شرکت، تهیه گزارش کامل از روند تولید، انبارداری و تاریخچه شرکت.</p>
-        <span class="date">۱۴۰۲/۰۴ - ۱۴۰۲/۰۶</span>
+        <h3>دبیر شیمی</h3>
+        <span class="place">آموزشگاه غیرانتفاعی علمی برنا</span>
+        <p>برگزاری کلاس‌های خصوصی و گروهی برای آمادگی امتحان نهایی و کنکور، به‌عنوان دبیر شیمی.</p>
+        <span class="date">۱۴۰۵/۰۲ - اکنون</span>
       </div>
     </div>
 
@@ -256,42 +256,16 @@
 <section id="skills">
   <h2>مهارت‌ها</h2>
   <div class="skills-grid">
-    <div>
-      <div class="skill-name"><span>توانایی کار در شرایط فشار</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>مدیریت زمان</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>انعطاف‌پذیری</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>کار تیمی</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>کنترل کیفیت</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>اصول GMP</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>پیگیری و نظارت</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>توجه به جزئیات</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-    </div>
-    <div>
-      <div class="skill-name"><span>Microsoft Word / Excel</span></div>
-      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
-    </div>
+    <div><div class="skill-name"><span>اصول GMP</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div></div>
+    <div><div class="skill-name"><span>کنترل کیفیت</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+    <div><div class="skill-name"><span>Python</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+    <div><div class="skill-name"><span>Deep Learning</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+    <div><div class="skill-name"><span>فراخوان API</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div></div>
+    <div><div class="skill-name"><span>مدیریت پروژه</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+    <div><div class="skill-name"><span>Problem Solving</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+    <div><div class="skill-name"><span>Teamwork</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div></div>
+    <div><div class="skill-name"><span>Microsoft Excel</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:50%"></div></div></div>
+    <div><div class="skill-name"><span>انگلیسی</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:50%"></div></div></div>
   </div>
 </section>
 
@@ -299,27 +273,37 @@
   <h2>پروژه‌ها</h2>
   <div class="projects-grid">
     <div class="project-card">
+      <h3>پروژه اتوماسیون</h3>
+      <p>مجموعه‌ای از نمونه‌ پروژه‌ها و نمونه‌کارهای طراحی اتوماسیون و چت‌بات‌های مختلف، همچنین طراحی سایت با ابزارهایی مثل n8n، Claude Code و GitHub.</p>
+      <span class="date">۱۴۰۵/۰۴ - ۱۴۰۵/۰۵</span>
+    </div>
+    <div class="project-card">
       <h3>تصفیه روغن موتور شرکت بهران</h3>
       <p>پروژه دانشجویی در زمینه تصفیه روغن موتور مستعمل و استفاده‌شده شرکت روغن بهران.</p>
       <span class="date">۱۴۰۲/۰۸ - ۱۴۰۲/۱۱</span>
-    </div>
-    <div class="project-card">
-      <h3>یادگیری دستگاه‌های CNC</h3>
-      <p>دوره تخصصی نگهداری و کار با دستگاه‌های CNC، گذرانده‌شده در مرکز آکادمی ایرانیان. دارای گواهینامه بین‌المللی CNC Machine Maintenance.</p>
-      <span class="date">۱۴۰۱/۰۴</span>
     </div>
   </div>
 </section>
 
 <section id="education">
   <h2>تحصیلات</h2>
-  <div class="edu-card">
-    <h3>کارشناسی ارشد مهندسی مکانیک - گرایش تبدیل انرژی</h3>
-    <div class="meta">دانشگاه تهران | معدل ۱۵ | ۱۴۰۳/۰۷ - اکنون</div>
-  </div>
-  <div class="edu-card">
-    <h3>کارشناسی مهندسی شیمی</h3>
-    <div class="meta">دانشگاه تهران | معدل ۱۴ | ۱۳۹۸/۰۷ - ۱۴۰۳/۰۴</div>
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-dot logo-dot"><img src="tehran-logo.png" alt="دانشگاه تهران"></div>
+      <div class="t-card">
+        <h3>کارشناسی ارشد مهندسی مکانیک - گرایش تبدیل انرژی</h3>
+        <span class="place">دانشگاه تهران</span>
+        <span class="date">۱۴۰۳/۰۷ - اکنون</span>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot logo-dot"><img src="tehran-logo.png" alt="دانشگاه تهران"></div>
+      <div class="t-card">
+        <h3>کارشناسی مهندسی شیمی</h3>
+        <span class="place">دانشگاه تهران</span>
+        <span class="date">۱۳۹۸/۰۷ - ۱۴۰۳/۰۴</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -335,5 +319,3 @@
 
 </body>
 </html>
-
-
